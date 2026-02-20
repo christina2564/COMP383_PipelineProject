@@ -1,1 +1,1 @@
-# COMP383_PipelineProject
+# COMP383_PipelineProject I download the the samples form the two patients donors form SRA and converted to paired-end fastq files using wget, and store them to the folder full_data. I will store test data in the folder test_data that will have the first 10,000 lines of the fastq files to make it easier to run them for the questions. 
