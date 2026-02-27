@@ -1,0 +1,29 @@
+import sys
+import argparse
+from Bio import SeqIO # imports seqio from biopython 
+print("Script started...")
+#function to parse command line arguments
+def check_arg(args=None):
+    parser = argparse.ArgumentParser(description="<add description of what script does>")
+    parser.add_argument("-i", "--input", 
+    help="input file", 
+    required=True)
+    parser.add_argument("-o", "--output",
+    help="output file",
+    required=True)
+    return parser.parse_args(args)
+
+#retrieve command line arguments
+arguments = check_arg(sys.argv[1:])
+infile = arguments.input
+outfile = arguments.output
+
+
+longest_rec = None # will store longest sequecne but its empty
+max_len = 0 # counter to track lengths of each seq, and stoe th ehgiest one we have seen 
+for f in SeqIO.parse(infile, "fasta"): # parses through each fatsa file, 
+    if len(f.seq) > max_len: # checks if length of specfic sequecne is greatrr than the current;y longest contig length 
+        max_len = len(f.seq) # if it is then pudates th elenth
+        longest_rec = f # storesuse fasta seq as longest one 
+if longest_rec: # if there is a longest contig
+    SeqIO.write(longest_rec, outfile, "fasta") # writes lognest seuqcnes to output file in fasta format 
