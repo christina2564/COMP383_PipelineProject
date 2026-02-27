@@ -5,10 +5,13 @@ Tools needed: Snakefile, Python, Biopython downloaded in python
 
 First, I download the the samples from the two patients donors, at 2 days and 6 days post infection, using SRA numbers and converted to paired-end fastq files using wget, and store them to the folder full_data. 
 code:
-wget {link from SRA, normalization}
-fasterqdump
 
-I then stored test data in the folder test_data in this repo that will have the first 10,000 lines of the fastq files to make it easier to run them for the questions. 
+wget {link from SRA, normalization}
+
+fasterqdump ./{sample name} 
+#fasterqdump was used to convert data from SRA to usable fastq
+
+I then stored test data in the folder test_data in this repo that will have the first 10,000 lines of the fastq files to make it easier to run them for the questions. This folder is stored in this repo 
 code used for that: 
 head -n 10000 SRR5660030_1.fastq > {path to file}
 
