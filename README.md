@@ -18,4 +18,6 @@ I then created the Snakefile and ran it with all nessary data downloaded.
 I have stored longest_contig and question4.py in this repo, two python files that will be called in the snake file in the rules longest_contig and count_contig
 
 To run snakefile on terminal:
+
+
 snakemake --cores 4
